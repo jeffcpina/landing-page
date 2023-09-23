@@ -75,7 +75,7 @@
     ]
   },
   "url": "",
-  "manifest": "",
-  "download": "",
+  "download": "https://github.com/jeffcpina/pf2e-char-builder/releases/download/v0.1.1/landing-page.zip",
+  "manifest": "https://github.com/jeffcpina/pf2e-char-builder/releases/download/v0.1.1/module.json",
   "manifestPlusVersion": "1.2.0"
 }
