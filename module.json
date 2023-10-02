@@ -3,7 +3,7 @@
   "name": "landing-page",
   "title": "Library: Scene Packer - Landing Page",
   "description": "Pf2e Landing page with books for references, empty characters, starters shop, session journal, city and world map.",
-  "version": "1.0.0",
+  "version": "0.1.3",
   "minimumCoreVersion": "0.8.6",
   "compatibleCoreVersion": "11",
   "compatibility": {
