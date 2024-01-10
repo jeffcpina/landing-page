@@ -54,6 +54,9 @@
       "entity": "Scene",
       "type": "Scene"
     }
+  ],  
+  "styles": [
+    "styles/module.css"
   ],
   "esmodules": [
     "./scripts/init.js"

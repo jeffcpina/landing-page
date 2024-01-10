@@ -1,6 +1,8 @@
 (() => {
   const adventureName = 'Landing Page';
   const moduleName = 'landing-page';
+  const modName = "Library: Scene Packer - Landing Page";
+  console.debug([moduleName, "init"]);
 
   /**
    * welcomeJournal (if set) will automatically be imported and opened after the first activation of a
@@ -82,4 +84,83 @@
       allowImportPrompts: true, // Set to false if you don't want the initial popup
     });
   });
+  Hooks.once( "init", function() {
+    console.debug([modName, "settings starting"])
+    Settings.registerSettings();
+    console.debug([modName, "settings done"])
+  });
+
+  //==========================
+  // Settings utilities
+  //==========================
+  class Settings {
+      static registerSettings() {
+  
+          game.settings.register(moduleName, 'url_file_login', {
+              name: 'URL PDF Login',
+              hint: 'PDF Protected File Login behind Basic Auth',
+              scope: 'world',     // "world" = sync to db, "client" = local storage
+              config: true,       // false if you dont want it to show in module config
+              type: String,       // Number, Boolean, String, Object
+              default: "",
+          });
+          game.settings.register(moduleName, 'url_file_passwd', {
+              name: 'URL PDF Password',
+              hint: 'PDF Protected File Password behind Basic Auth',
+              scope: 'world',     // "world" = sync to db, "client" = local storage
+              config: true,       // false if you dont want it to show in module config
+              type: String,       // Number, Boolean, String, Object
+              default: "",
+          });
+          game.settings.register(moduleName, 'url_file_domain', {
+            name: 'URL PDF Secured Domain',
+            hint: 'PDF Protected File Domain URL behind Basic Auth',
+            scope: 'world',     // "world" = sync to db, "client" = local storage
+            config: true,       // false if you dont want it to show in module config
+            type: String,       // Number, Boolean, String, Object
+            default: "",
+        });
+      }
+  }
+
+
 })();
+
+  //==========================
+  // Customize Journals
+  //==========================
+class CustomOldEnglish extends JournalSheet {
+	static get defaultOptions() {
+		const options = super.defaultOptions;
+		options.classes.push('custom-old-english');
+		return options;
+	}
+}
+class CustomOne extends JournalSheet {
+	static get defaultOptions() {
+		const options = super.defaultOptions;
+		options.classes.push('custom-one');
+		return options;
+	}
+}
+Hooks.on("init", (documentTypes) => {
+    console.log("My Custom Journals | Registering ");
+    /*CUSTOMIZE
+     * Here, register your sheet so it shows up properly in the dropdown, just change
+     * for your sheet name and you're good to go
+     */
+    Journal.registerSheet("journals", CustomOldEnglish, {
+        label: "Custom Olde English",
+        types: ["base"],
+        makeDefault: false
+    });
+    Journal.registerSheet("journals", CustomOne, {
+        label: "Custom One",
+        types: ["base"],
+        makeDefault: false
+    });
+    
+    console.log("Custom Journals | Ready.")
+});
+
+
