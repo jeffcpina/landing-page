@@ -1,0 +1,5 @@
+2024/01/15-14:51:52.356094 ffff9ccc7a80 Recovering log #67
+2024/01/15-14:51:52.366695 ffff9ccc7a80 Level-0 table #69: started
+2024/01/15-14:51:52.368539 ffff9ccc7a80 Level-0 table #69: 5916 bytes OK
+2024/01/15-14:51:52.370916 ffff9ccc7a80 Delete type=0 #67
+2024/01/15-14:51:52.371093 ffff9ccc7a80 Delete type=3 #66

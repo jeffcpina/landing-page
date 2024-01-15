@@ -1,0 +1,13 @@
+<div class="playgen">
+    <p></p>
+    <p style="text-align: center;">
+        <label for="player">Select Player: </label> 
+        <select name="player" id="playertochange"> 
+            <option value=""></option> 
+            {{#each users}}
+	            <option value="{{id}}">{{name}} </option>
+            {{/each}}
+        </select>
+    </p>
+    <p>&nbsp;</p>
+</div>
