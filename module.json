@@ -55,6 +55,20 @@
       "type": "Scene"
     }
   ],  
+  "packFolders": [
+    {
+        "name": "Theme Landing Page",
+        "sorting": "a",
+        "color": "#1a4d22",
+        "packs": [
+              "actors",
+              "items",
+              "journals",
+              "macro",
+              "maps"
+        ]
+    }
+  ],
   "styles": [
     "styles/module.css"
   ],
